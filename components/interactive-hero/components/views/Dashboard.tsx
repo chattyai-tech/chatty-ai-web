@@ -113,9 +113,9 @@ export const DashboardView: React.FC<DashboardProps> = ({ searchQuery, isTyping,
                         </div>
 
                         {/* Heading */}
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[var(--text-primary)] mb-2 sm:mb-3 text-center">
+                        <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-[var(--text-primary)] mb-2 sm:mb-3 text-center">
                             How can I help you today?
-                        </h2>
+                        </div>
                         <p className="text-sm sm:text-base text-[var(--text-muted)] mb-6 sm:mb-8 md:mb-10 text-center max-w-md">
                             Choose a suggestion or type your question below
                         </p>

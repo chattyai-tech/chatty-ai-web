@@ -38,7 +38,7 @@ const features = [
         name: "Contextual Synthesis",
         description: "Go beyond keyword matching. Our engine understands intent and relationships within your company knowledge graph.",
         href: "/platform",
-        cta: "Learn more",
+        cta: "Explore Contextual AI",
         background: (
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent-violet/20 via-transparent to-transparent" />
