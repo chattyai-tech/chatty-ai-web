@@ -1,22 +1,6 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { Calendar, Clock, Shield, Database, Users, CheckCircle, ArrowRight, Sparkles } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: "Book a Demo",
-  description:
-    "Schedule a short walkthrough of ChattyAI for your team. Enterprise-ready, secure, and deployable on-prem.",
-  alternates: { 
-    canonical: "/demo" 
-  },
-  openGraph: {
-    title: "Book a Demo | ChattyAI",
-    description: "Schedule a walkthrough of ChattyAI for your team.",
-    url: 'https://chattyai.com/demo',
-    type: 'website',
-  },
-}
 
 const demoHighlights = [
   {
@@ -54,7 +38,7 @@ export default function DemoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-28 pb-16 bg-[var(--bg-primary)]">
+      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-20 sm:pt-24 md:pt-28 pb-16 bg-[var(--bg-primary)]">
         {/* Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[1200px] h-[800px] bg-gradient-to-b from-purple-500/15 via-violet-500/8 to-transparent rounded-full blur-[150px]" />

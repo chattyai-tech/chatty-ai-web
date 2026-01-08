@@ -602,44 +602,25 @@ export async function improvedFunction() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Hero Text */}
           <div className="text-center mb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5">
               <Sparkles className="w-4 h-4 text-[var(--accent-violet)]" />
               <span className="text-[var(--accent-violet)]">AI Code Assistant</span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-5 leading-[1.1]"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-5 leading-[1.1]">
               Watch AI transform
               <br />
               <span className="bg-gradient-to-r from-[var(--purple-500)] via-[var(--violet-500)] to-[var(--indigo-500)] bg-clip-text text-transparent">
                 how you code
               </span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-6"
-            >
+            </h1>
+
+            <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-6">
               Watch the demo or take control. Click anywhere to interact.
-            </motion.p>
+            </p>
 
             {/* Demo Controls */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center justify-center gap-3 mb-8"
-            >
+            <div className="flex items-center justify-center gap-3 mb-8">
               <button
                 type="button"
                 onClick={toggleAutoPlay}
@@ -674,24 +655,20 @@ export async function improvedFunction() {
                 Get Started
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </motion.div>
+            </div>
 
             {/* Status indicator */}
             {isAutoPlaying && !hasUserInteracted && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex items-center justify-center gap-2 text-sm text-[var(--text-muted)] mb-4"
-              >
+              <div className="flex items-center justify-center gap-2 text-sm text-[var(--text-muted)] mb-4">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span>Auto-playing demo • Click to interact</span>
-              </motion.div>
+                <span>Auto-playing demo - Click to interact</span>
+              </div>
             )}
           </div>
 
           {/* Interactive IDE */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative"
@@ -852,7 +829,7 @@ export async function improvedFunction() {
                     {activePanel === 'chat' && (
                       <motion.div
                         key="chat"
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className="flex-1 flex flex-col"
@@ -949,7 +926,7 @@ export async function improvedFunction() {
                     {activePanel === 'terminal' && (
                       <motion.div
                         key="terminal"
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className="flex-1 flex flex-col bg-[#0d1117]"
@@ -1000,7 +977,7 @@ export async function improvedFunction() {
             ].map((feature) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-primary)] hover:border-[var(--purple-500)]/30 transition-all"

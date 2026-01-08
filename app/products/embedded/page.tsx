@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import { CTASection } from '@/components/CTASection'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-import { 
-  FileText, 
-  CheckCircle2, 
-  ArrowRight, 
-  Sparkles, 
+import {
+  FileText,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
   Brain,
   Zap,
   Shield,
@@ -23,6 +23,7 @@ import {
   Lightbulb,
   RefreshCw,
   Languages,
+  Grid2X2,
   BookOpen,
   Target,
   TrendingUp,
@@ -249,7 +250,7 @@ export default function ChattyForWordPage() {
             <div className="space-y-8">
               {/* Badge - purple theme */}
               <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                initial={{ opacity: 1, y: 20, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className="inline-flex"
@@ -271,34 +272,25 @@ export default function ChattyForWordPage() {
               </motion.div>
 
               {/* Heading - purple theme */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-[-0.04em] leading-[1.05]">
-                  <span className="text-[var(--text-primary)]">ChattyAI for </span>
+                  <span className="text-[var(--text-primary)]">Chatty AI for </span>
                   <br />
                   <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 bg-clip-text text-transparent">
                     Microsoft Office
                   </span>
                 </h1>
-              </motion.div>
+              </div>
 
               {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl"
-              >
-                Bring enterprise AI directly into Word, Excel, PowerPoint, and Outlook. 
+              <p className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl">
+                Bring enterprise AI directly into Word, Excel, PowerPoint, and Outlook.
                 Access your company knowledge, automate tasks, and work smarter — all without leaving Microsoft 365.
-              </motion.p>
+              </p>
 
               {/* Office App Pills */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="flex flex-wrap gap-3"
@@ -327,7 +319,7 @@ export default function ChattyForWordPage() {
 
               {/* CTAs - purple theme */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="flex flex-wrap gap-4 pt-4"
@@ -361,7 +353,7 @@ export default function ChattyForWordPage() {
 
             {/* Right - Interactive Demo */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 1, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
@@ -398,7 +390,7 @@ export default function ChattyForWordPage() {
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={activeApp}
-                          initial={{ opacity: 0, y: 10 }}
+                          initial={{ opacity: 1, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.3 }}
@@ -416,7 +408,7 @@ export default function ChattyForWordPage() {
 
         {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
@@ -447,7 +439,7 @@ export default function ChattyForWordPage() {
               <div className={`grid lg:grid-cols-2 gap-16 items-center ${idx % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                 {/* Content */}
                 <motion.div
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+                  initial={{ opacity: 1, x: idx % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
@@ -481,7 +473,7 @@ export default function ChattyForWordPage() {
                     {app.features.map((feature, fIdx) => (
                       <motion.div
                         key={fIdx}
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 1, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: fIdx * 0.1 }}
@@ -521,7 +513,7 @@ export default function ChattyForWordPage() {
 
                 {/* Visual */}
                 <motion.div
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? 30 : -30 }}
+                  initial={{ opacity: 1, x: idx % 2 === 0 ? 30 : -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
@@ -566,7 +558,7 @@ export default function ChattyForWordPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className="text-center mb-20">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
@@ -574,18 +566,18 @@ export default function ChattyForWordPage() {
                 Getting Started
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)] mb-6"
               >
-                How ChattyAI Connects to{' '}
+                How Chatty AI Connects to{' '}
                 <span className="bg-gradient-to-r from-purple-500 to-violet-500 bg-clip-text text-transparent">
                   Microsoft 365
                 </span>
               </motion.h2>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
@@ -599,7 +591,7 @@ export default function ChattyForWordPage() {
               {howItWorksSteps.map((step, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.15 }}
@@ -636,15 +628,15 @@ export default function ChattyForWordPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
               >
-                Why Choose ChattyAI
+                Why Choose Chatty AI
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)]"
@@ -660,7 +652,7 @@ export default function ChattyForWordPage() {
               {benefits.map((benefit, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}

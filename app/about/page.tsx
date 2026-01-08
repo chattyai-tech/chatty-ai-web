@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero - Parallax Effect */}
-      <section ref={heroRef} className="relative pt-40 pb-24 bg-[var(--bg-primary)] overflow-hidden">
+      <section ref={heroRef} className="relative pt-20 sm:pt-24 md:pt-28 pb-24 bg-[var(--bg-primary)] overflow-hidden">
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="max-w-7xl mx-auto px-6 lg:px-8"
@@ -27,41 +27,26 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-end">
             <div>
               <motion.p
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 1, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="text-sm font-medium tracking-[0.2em] uppercase text-purple-400 mb-6"
               >
                 About Chatty AI
               </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95] text-[var(--text-primary)]"
-              >
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95] text-[var(--text-primary)]">
                 We build AI
                 <br />
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-[var(--text-muted)]"
-                >
+                <span className="text-[var(--text-muted)]">
                   for the enterprise.
-                </motion.span>
-              </motion.h1>
+                </span>
+              </h1>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:pb-4"
-            >
+            <div className="lg:pb-4">
               <p className="text-xl text-[var(--text-secondary)] leading-relaxed max-w-md">
                 Private. Powerful. Built for organizations that refuse to compromise on security or intelligence.
               </p>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -72,7 +57,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 1, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -84,7 +69,7 @@ export default function AboutPage() {
                 </h2>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -107,7 +92,7 @@ export default function AboutPage() {
         <section className="py-24 bg-[var(--bg-surface)] border-y border-[var(--border-primary)]">
           <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 1, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
@@ -116,7 +101,7 @@ export default function AboutPage() {
               What We Believe
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -136,7 +121,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 mb-20">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 1, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
@@ -160,7 +145,7 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <motion.div
                   key={item.num}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -190,7 +175,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 mb-16">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 1, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
@@ -198,7 +183,7 @@ export default function AboutPage() {
               >
                 <p className="text-xs font-medium tracking-[0.3em] uppercase text-[var(--text-muted)] mb-4">03 / Leadership</p>
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-[-0.02em] text-[var(--text-primary)]">
-                  The people behind ChattyAI.
+                  The people behind Chatty AI.
                 </h2>
               </motion.div>
             </div>
@@ -220,7 +205,7 @@ export default function AboutPage() {
               ].map((founder, i) => (
                 <motion.div
                   key={founder.name}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 1, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -243,7 +228,7 @@ export default function AboutPage() {
                       />
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0 }}
+                      initial={{ opacity: 1 }}
                       animate={{ opacity: hoveredFounder === i ? 1 : 0 }}
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent"
@@ -280,7 +265,7 @@ export default function AboutPage() {
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -308,7 +293,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
+                initial={{ opacity: 1, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -337,7 +322,7 @@ export default function AboutPage() {
                 {['Engineering', 'Product', 'Sales', 'Operations'].map((dept, i) => (
                   <motion.div
                     key={dept}
-                    initial={{ opacity: 0, y: 30, rotate: -2 }}
+                    initial={{ opacity: 1, y: 30, rotate: -2 }}
                     whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

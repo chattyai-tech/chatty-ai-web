@@ -1,42 +1,53 @@
 // ===== DATA FOR INTERACTIVE HERO SECTION =====
 export const TABLE_DATA = [
-  { title: "Staff", salary: 65841.37341048894, count: 145 },
-  { title: "Manager", salary: 77723.67, count: 23 },
-  { title: "Senior Engineer", salary: 69782.3329923169, count: 67 },
-  { title: "Senior Staff", salary: 79731.67692738514, count: 34 },
-  { title: "Assistant Engineer", salary: 55893.86, count: 89 },
-  { title: "Technique Leader", salary: 86469.12, count: 12 },
-  { title: "Engineer", salary: 62178.35, count: 98 },
-  { title: "HR Manager", salary: 72345.50, count: 8 }
-]
+  { title: 'Staff', salary: 65841.37341048894, count: 145 },
+  { title: 'Manager', salary: 77723.67, count: 23 },
+  { title: 'Senior Engineer', salary: 69782.3329923169, count: 67 },
+  { title: 'Senior Staff', salary: 79731.67692738514, count: 34 },
+  { title: 'Assistant Engineer', salary: 55893.86, count: 89 },
+  { title: 'Technique Leader', salary: 86469.12, count: 12 },
+  { title: 'Engineer', salary: 62178.35, count: 98 },
+  { title: 'HR Manager', salary: 72345.5, count: 8 },
+];
 
-export const CHART_DATA = TABLE_DATA.map(item => ({
+export const CHART_DATA = TABLE_DATA.map((item) => ({
   name: item.title,
   salary: Math.round(item.salary),
-  count: item.count
-}))
+  count: item.count,
+}));
 
 export const SQL_QUERY = `SELECT title, AVG(salary) as average_salary, COUNT(*) as count
 FROM employees e
 JOIN salaries s ON e.emp_no = s.emp_no
 GROUP BY title
-ORDER BY average_salary DESC;`
+ORDER BY average_salary DESC;`;
 
 export const DEMO_SCENARIO = {
-  query: "What is the average salary for each position?",
+  query: 'What is the average salary for each position?',
   steps: 5,
   response: {
-    intro: "To find the average salary for each position, we analyzed the latest salary data for employees based on their job titles. Here are the average salaries for some of the positions:",
+    intro:
+      'To find the average salary for each position, we analyzed the latest salary data for employees based on their job titles. Here are the average salaries for some of the positions:',
     results: TABLE_DATA.slice(0, 5),
-    followUp: "There are more positions with their average salaries, but these are the top examples."
-  }
-}
+    followUp:
+      'There are more positions with their average salaries, but these are the top examples.',
+  },
+};
 
 export const SUGGESTIONS = [
-  { category: "Aggregation", text: "What is the average salary for each position?" },
-  { category: "Comparison", text: "Compare the average salary of male and female employees in each department." },
-  { category: "Associating", text: "What are the names of the managers and the departments they manage?" },
-]
+  {
+    category: 'Aggregation',
+    text: 'What is the average salary for each position?',
+  },
+  {
+    category: 'Comparison',
+    text: 'Compare the average salary of male and female employees in each department.',
+  },
+  {
+    category: 'Associating',
+    text: 'What are the names of the managers and the departments they manage?',
+  },
+];
 
 // Data Modeling Tables
 export const MODELING_TABLES = [
@@ -49,8 +60,8 @@ export const MODELING_TABLES = [
       { name: 'first_name', type: 'VARCHAR' },
       { name: 'last_name', type: 'VARCHAR' },
       { name: 'gender', type: 'ENUM' },
-      { name: 'hire_date', type: 'DATE' }
-    ]
+      { name: 'hire_date', type: 'DATE' },
+    ],
   },
   {
     id: 'salaries',
@@ -60,8 +71,8 @@ export const MODELING_TABLES = [
       { name: 'emp_no', type: 'INT', primary: true },
       { name: 'salary', type: 'DECIMAL' },
       { name: 'from_date', type: 'DATE' },
-      { name: 'to_date', type: 'DATE' }
-    ]
+      { name: 'to_date', type: 'DATE' },
+    ],
   },
   {
     id: 'titles',
@@ -71,8 +82,8 @@ export const MODELING_TABLES = [
       { name: 'emp_no', type: 'INT', primary: true },
       { name: 'title', type: 'VARCHAR' },
       { name: 'from_date', type: 'DATE' },
-      { name: 'to_date', type: 'DATE' }
-    ]
+      { name: 'to_date', type: 'DATE' },
+    ],
   },
   {
     id: 'departments',
@@ -80,119 +91,127 @@ export const MODELING_TABLES = [
     position: { x: 550, y: 300 },
     fields: [
       { name: 'dept_no', type: 'CHAR', primary: true },
-      { name: 'dept_name', type: 'VARCHAR' }
-    ]
-  }
-]
+      { name: 'dept_name', type: 'VARCHAR' },
+    ],
+  },
+];
 
 export const MODELING_RELATIONSHIPS = [
   { from: 'employees', to: 'salaries', field: 'emp_no' },
   { from: 'employees', to: 'titles', field: 'emp_no' },
-]
+];
 
 // Workflow Nodes
 export const WORKFLOW_NODES: Array<{
-  id: string
-  type: 'trigger' | 'agent' | 'tool' | 'action'
-  position: { x: number; y: number }
-  data: { label: string }
+  id: string;
+  type: 'trigger' | 'agent' | 'tool' | 'action';
+  position: { x: number; y: number };
+  data: { label: string };
 }> = [
   {
     id: '1',
     type: 'trigger',
     position: { x: 100, y: 100 },
-    data: { label: 'New Data Arrives' }
+    data: { label: 'New Data Arrives' },
   },
   {
     id: '2',
     type: 'agent',
     position: { x: 300, y: 100 },
-    data: { label: 'AI Agent' }
+    data: { label: 'AI Agent' },
   },
   {
     id: '3',
     type: 'tool',
     position: { x: 500, y: 100 },
-    data: { label: 'Database Query' }
+    data: { label: 'Database Query' },
   },
   {
     id: '4',
     type: 'action',
     position: { x: 700, y: 100 },
-    data: { label: 'Send Report' }
-  }
-]
+    data: { label: 'Send Report' },
+  },
+];
 
 export const WORKFLOW_EDGES = [
   { id: 'e1-2', source: '1', target: '2' },
   { id: 'e2-3', source: '2', target: '3' },
-  { id: 'e3-4', source: '3', target: '4' }
-]
+  { id: 'e3-4', source: '3', target: '4' },
+];
 
 // Integration Personas
 export const WORD_PERSONAS = [
   { id: 'lawyer', name: 'Lawyer', description: 'Legal document analysis' },
-  { id: 'copywriter', name: 'Copywriter', description: 'Marketing content creation' },
-  { id: 'analyst', name: 'Analyst', description: 'Data report generation' }
-]
+  {
+    id: 'copywriter',
+    name: 'Copywriter',
+    description: 'Marketing content creation',
+  },
+  { id: 'analyst', name: 'Analyst', description: 'Data report generation' },
+];
 
 export const NAV_LINKS = [
   { label: 'Product', href: '#platform' },
   { label: 'Security', href: '#security' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Contact', href: '#footer' },
-]
+];
 
 export const TRUSTED_ORGS_HERO = [
-  { name: "Howden", industry: "Global Insurance" },
-  { name: "Hillel Yaffe", industry: "Medical Center" },
-  { name: "Electra Power", industry: "Consumer Energy" },
-  { name: "Beit HaNasi", industry: "Government" },
-  { name: "Yazmak", industry: "Enterprise Services" }
-]
+  { name: 'Howden', industry: 'Global Insurance' },
+  { name: 'Hillel Yaffe', industry: 'Medical Center' },
+  { name: 'Electra Power', industry: 'Consumer Energy' },
+  { name: 'Beit HaNasi', industry: 'Government' },
+  { name: 'Yazmak', industry: 'Enterprise Services' },
+];
 
 export const SECURITY_FEATURES = [
   {
     title: 'On-Prem Deployment',
     description: 'Runs on your Kubernetes cluster or bare metal servers',
-    iconName: 'Server' as const
+    iconName: 'Server' as const,
   },
   {
     title: 'End-to-End Encryption',
     description: 'AES-256 encryption at rest, TLS 1.3 in transit',
-    iconName: 'Lock' as const
+    iconName: 'Lock' as const,
   },
   {
     title: 'Role-Based Access',
     description: 'Granular permissions synced with Active Directory/LDAP',
-    iconName: 'UserCheck' as const
+    iconName: 'UserCheck' as const,
   },
   {
     title: 'Audit Logging & Compliance',
     description: 'Every query, action, and access logged immutably',
-    iconName: 'Activity' as const
+    iconName: 'Activity' as const,
   },
   {
     title: 'Zero External Exposure',
     description: 'No internet egress required, air-gapped capable',
-    iconName: 'EyeOff' as const
+    iconName: 'EyeOff' as const,
   },
-]
+];
 
 export const LOGOS = [
-  { name: "Office of the President", image: "/d56fc5aad14690d3e1599ff3da4e67af.png" },
-  { name: "Hillel Yaffe", image: "/logo_eng.jpg" },
-  { name: "Electra Power", image: "/1645532977595-0.png" },
-  { name: "Howden", image: "/Howden_Consumer_Logo_Brass_RGB2.png" }
-]
+  {
+    name: 'Office of the President',
+    image: '/d56fc5aad14690d3e1599ff3da4e67af.png',
+  },
+  { name: 'Hillel Yaffe', image: '/logo_eng.jpg' },
+  { name: 'Electra Power', image: '/1645532977595-0.png' },
+  { name: 'Howden', image: '/Howden_Consumer_Logo_Brass_RGB2.png' },
+];
 
 export const USE_CASES = [
-  { title: "Generate SQL & analyze data", icon: "database" },
-  { title: "Search and query enterprise documents", icon: "search" },
-  { title: "Automate workflows with n8n", icon: "zap" },
-  { title: "Draft & summarize reports in Word", icon: "file-text" },
-  { title: "Compare legal & insurance documents", icon: "scale" },
-  { title: "Ask anything about your organization's knowledge", icon: "message-square" }
-]
-
-
+  { title: 'Generate SQL & analyze data', icon: 'database' },
+  { title: 'Search and query enterprise documents', icon: 'search' },
+  { title: 'Automate workflows with n8n', icon: 'zap' },
+  { title: 'Draft & summarize reports in Word', icon: 'file-text' },
+  { title: 'Compare legal & insurance documents', icon: 'scale' },
+  {
+    title: "Ask anything about your organization's knowledge",
+    icon: 'message-square',
+  },
+];

@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Disable source maps in production for better performance and security
+  productionBrowserSourceMaps: false,
   images: {
     domains: [],
     unoptimized: false,
@@ -10,6 +12,37 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-}
 
-module.exports = nextConfig
+  // Security headers for improved Lighthouse scores
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;

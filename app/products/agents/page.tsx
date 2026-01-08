@@ -116,50 +116,25 @@ export default function AgentsPage() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-18">
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold tracking-widest uppercase mb-6"
-            >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold tracking-widest uppercase mb-6">
               <Bot className="w-4 h-4" />
               <span>Chatty Agents</span>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1] text-[var(--text-primary)]"
-            >
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1] text-[var(--text-primary)]">
               Intelligent Agents
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
                 For Enterprise Automation
               </span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8"
-            >
+            </h1>
+
+            <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
               Build AI-powered agents with n8n integration. Create complex workflows that connect systems, make decisions, and automate business processes autonomously.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex justify-center gap-4"
-            >
+            </p>
+
+            <div className="flex justify-center gap-4">
               <Link
                 href="/demo"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 text-white font-bold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center gap-2"
@@ -174,8 +149,8 @@ export default function AgentsPage() {
               >
                 See n8n Integration
               </button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -183,12 +158,7 @@ export default function AgentsPage() {
       <ScrollReveal>
         <section className="relative py-12 sm:py-16 bg-gradient-to-b from-[var(--bg-primary)] via-[var(--bg-surface)] to-[var(--bg-primary)]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
+            <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold tracking-widest uppercase mb-6">
                 <Workflow className="w-4 h-4" />
                 <span>Interactive Workflow Builder</span>
@@ -199,7 +169,7 @@ export default function AgentsPage() {
               <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
                 See how Chatty Agents connect with n8n workflows to automate complex business processes
               </p>
-            </motion.div>
+            </div>
 
             {/* Workflow Selector */}
             <div className="flex justify-center gap-4 mb-8">
@@ -289,7 +259,7 @@ export default function AgentsPage() {
                   return (
                     <div key={node.id} className="flex items-center">
                       <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
+                        initial={{ opacity: 1, scale: 0.95 }}
                         animate={{ 
                           opacity: 1, 
                           scale: isActive ? 1.02 : 1
@@ -344,7 +314,7 @@ export default function AgentsPage() {
                       {/* Arrow Connector - Only show if not last node and not a branch */}
                       {index < currentWorkflow.length - 1 && !isBranchNode && (
                         <motion.div
-                          initial={{ opacity: 0 }}
+                          initial={{ opacity: 1 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: index * 0.06 + 0.1 }}
                           className="flex-shrink-0 mx-2"
@@ -395,7 +365,7 @@ export default function AgentsPage() {
             <AnimatePresence>
               {showN8nConnection && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   className="mt-8 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-indigo-500/10 border border-indigo-500/30 rounded-2xl p-6"
@@ -462,7 +432,7 @@ export default function AgentsPage() {
                 <div className="space-y-6">
                   {/* Model (Brain) */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="flex items-center gap-4 p-4 rounded-xl bg-purple-500/10 border-2 border-purple-500/30"
@@ -506,7 +476,7 @@ export default function AgentsPage() {
 
                   {/* Agent (Executing Arms) */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
@@ -530,7 +500,7 @@ export default function AgentsPage() {
 
                   {/* Connection to Organizational Data */}
                   <motion.div
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
@@ -581,7 +551,7 @@ export default function AgentsPage() {
                         ].map((item, i) => (
                           <motion.div
                             key={i}
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 1, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
@@ -642,7 +612,7 @@ export default function AgentsPage() {
               ].map((item, index) => (
                 <motion.div
                   key={item.step}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
@@ -698,7 +668,7 @@ export default function AgentsPage() {
               ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}

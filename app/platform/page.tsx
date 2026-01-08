@@ -303,7 +303,7 @@ export default function PlatformPage() {
       />
 
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+      <section className="relative min-h-screen pt-20 sm:pt-24 md:pt-28 pb-16 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none">
           <GradientOrb className="w-[800px] h-[800px] -top-60 -left-60 bg-purple-600/20" delay={0} />
@@ -317,7 +317,7 @@ export default function PlatformPage() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              initial={{ opacity: 1, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--bg-card)] border border-purple-500/30 text-sm font-semibold mb-8"
@@ -334,33 +334,23 @@ export default function PlatformPage() {
             </motion.div>
 
             {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-[-0.04em] leading-[1.05] mb-8"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-[-0.04em] leading-[1.05] mb-8">
               <span className="text-[var(--text-primary)]">The Complete </span>
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 bg-clip-text text-transparent">
                 Enterprise AI Platform
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto mb-12"
-            >
-              Five powerful AI products, one unified platform. Transform how your enterprise 
+            <p className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto mb-12">
+              Five powerful AI products, one unified platform. Transform how your enterprise
               works with documents, databases, workflows, and code.
-            </motion.p>
+            </p>
 
             {/* Quick Navigation Pills */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-wrap justify-center gap-3"
@@ -369,7 +359,7 @@ export default function PlatformPage() {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 1, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + idx * 0.05 }}
                   whileHover={{ y: -3, scale: 1.02 }}
@@ -389,7 +379,7 @@ export default function PlatformPage() {
 
           {/* Hero Visual - Modern Product Showcase Grid */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             className="relative max-w-4xl mx-auto mt-8 sm:mt-12"
@@ -405,7 +395,7 @@ export default function PlatformPage() {
                 <motion.button
                   key={product.id}
                   onClick={() => scrollToSection(product.id)}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + idx * 0.1, duration: 0.5 }}
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -438,7 +428,7 @@ export default function PlatformPage() {
 
             {/* Center Platform Badge */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.5 }}
               className="flex justify-center mt-6 sm:mt-8"
@@ -493,7 +483,7 @@ export default function PlatformPage() {
             <div className={`grid lg:grid-cols-2 gap-16 items-center ${idx % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
               {/* Content */}
               <motion.div
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+                initial={{ opacity: 1, x: idx % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -522,7 +512,7 @@ export default function PlatformPage() {
                   {product.features.map((feature, fIdx) => (
                     <motion.li
                       key={fIdx}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 1, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: fIdx * 0.1 }}
@@ -557,7 +547,7 @@ export default function PlatformPage() {
                     whileTap={{ scale: 0.98 }}
                     className={`group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${product.gradient} text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300`}
                   >
-                    Learn More
+                    Learn More About {product.name}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </Link>
@@ -565,7 +555,7 @@ export default function PlatformPage() {
 
               {/* Visual */}
               <motion.div
-                initial={{ opacity: 0, x: idx % 2 === 0 ? 30 : -30 }}
+                initial={{ opacity: 1, x: idx % 2 === 0 ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -616,15 +606,15 @@ export default function PlatformPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
               >
-                Why Choose ChattyAI
+                Why Choose Chatty AI
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)] mb-6"
@@ -642,7 +632,7 @@ export default function PlatformPage() {
               ].map((benefit, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}

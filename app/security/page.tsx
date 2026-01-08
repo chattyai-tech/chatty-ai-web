@@ -56,7 +56,7 @@ export default function SecurityPage() {
   return (
     <>
       {/* Hero - With Interactive Shield */}
-      <section className="relative pt-40 pb-28 bg-[var(--bg-primary)] overflow-hidden">
+      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-28 bg-[var(--bg-primary)] overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[500px] bg-gradient-to-b from-purple-500/15 to-transparent rounded-full blur-[120px]" />
         </div>
@@ -66,36 +66,26 @@ export default function SecurityPage() {
             {/* Left - Text Content */}
             <div>
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="text-sm font-medium tracking-[0.2em] uppercase text-purple-400 mb-6"
               >
                 Security & Compliance
               </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] leading-[1.1] text-[var(--text-primary)] mb-6"
-              >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] leading-[1.1] text-[var(--text-primary)] mb-6">
                 Your data never
                 <br />
                 leaves your walls.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl"
-              >
+              </h1>
+              <p className="text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl">
                 Enterprise-grade security architecture designed for organizations that cannot compromise on data sovereignty.
-              </motion.p>
+              </p>
             </div>
 
             {/* Right - Interactive Shield Visualization */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="relative hidden lg:flex items-center justify-center"
@@ -153,7 +143,7 @@ export default function SecurityPage() {
 
                 {/* Status Labels */}
                 <motion.div
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 1, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 }}
                   className="absolute -right-4 top-1/4 bg-[var(--bg-card)] border border-[var(--border-primary)] rounded-lg px-3 py-2 shadow-lg"
@@ -165,7 +155,7 @@ export default function SecurityPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 1, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1 }}
                   className="absolute -left-4 bottom-1/4 bg-[var(--bg-card)] border border-[var(--border-primary)] rounded-lg px-3 py-2 shadow-lg"
@@ -177,7 +167,7 @@ export default function SecurityPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2 }}
                   className="absolute left-1/2 -translate-x-1/2 -bottom-4 bg-[var(--bg-card)] border border-[var(--border-primary)] rounded-lg px-3 py-2 shadow-lg"
@@ -241,7 +231,7 @@ export default function SecurityPage() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeLayer}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -268,7 +258,7 @@ export default function SecurityPage() {
                       {securityLayers[activeLayer].features.map((feature, i) => (
                         <motion.div
                           key={feature}
-                          initial={{ opacity: 0, x: -10 }}
+                          initial={{ opacity: 1, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: i * 0.1, duration: 0.4 }}
                           className="flex items-center gap-3 p-4 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-primary)]"
@@ -291,7 +281,7 @@ export default function SecurityPage() {
         <section className="py-16 sm:py-20 bg-[var(--bg-surface)] border-y border-[var(--border-primary)]">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 1, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -330,7 +320,7 @@ export default function SecurityPage() {
                   {certifications.map((cert, i) => (
                     <motion.div
                       key={cert.name}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 1, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1, duration: 0.5 }}

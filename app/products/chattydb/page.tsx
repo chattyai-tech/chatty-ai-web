@@ -402,41 +402,27 @@ export default function ChattyDBPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Hero Header */}
           <div className="text-center mb-10">
-              <motion.div
-              initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5"
-              >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5">
               <Database className="w-4 h-4 text-[var(--accent-violet)]" />
               <span className="text-[var(--accent-violet)]">Natural Language to SQL</span>
-              </motion.div>
+              </div>
 
-              <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-5 leading-[1.1]"
-              >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-5 leading-[1.1]">
                 Talk to your
                 <br />
               <span className="bg-gradient-to-r from-[var(--purple-500)] via-[var(--violet-500)] to-[var(--indigo-500)] bg-clip-text text-transparent">
                 databases
               </span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-6"
-              >
+              <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-6">
               Ask questions in plain English. Get instant SQL queries, visualizations, and insights.
               No SQL expertise required.
-              </motion.p>
+              </p>
 
             {/* Demo Controls */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               className="flex items-center justify-center gap-3 mb-6"
@@ -480,19 +466,19 @@ export default function ChattyDBPage() {
             {/* Status */}
             {isAutoPlaying && !hasUserInteracted && (
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 className="flex items-center justify-center gap-2 text-sm text-[var(--text-muted)]"
               >
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span>Live demo • Click to interact</span>
+                <span>Live demo - Click to interact</span>
               </motion.div>
             )}
             </div>
 
           {/* Interactive Demo */}
             <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative"
@@ -656,7 +642,7 @@ export default function ChattyDBPage() {
                   <AnimatePresence>
                     {showResults && (
                             <motion.div
-                              initial={{ opacity: 0 }}
+                              initial={{ opacity: 1 }}
                               animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className="flex-1 flex flex-col overflow-hidden"
@@ -684,7 +670,7 @@ export default function ChattyDBPage() {
                                 {currentQuery.results.map((row, i) => (
                                   <motion.tr
                                     key={`row-${i}`}
-                                  initial={{ opacity: 0, x: -10 }}
+                                  initial={{ opacity: 1, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: i * 0.05 }}
                                     className="border-b border-[var(--border-primary)]/50 hover:bg-[var(--bg-hover)]"
@@ -808,7 +794,7 @@ export default function ChattyDBPage() {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5"
@@ -818,7 +804,7 @@ export default function ChattyDBPage() {
               </motion.div>
               
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
@@ -832,7 +818,7 @@ export default function ChattyDBPage() {
               </motion.h2>
               
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
@@ -846,7 +832,7 @@ export default function ChattyDBPage() {
               {supportedDatabases.map((db, i) => (
                 <motion.div
                   key={db.name}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.5, type: "spring" }}
@@ -888,7 +874,7 @@ export default function ChattyDBPage() {
             
             {/* Additional databases note */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
@@ -917,7 +903,7 @@ export default function ChattyDBPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
                 <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--purple-500)]/10 border border-[var(--purple-500)]/20 text-sm font-semibold mb-5"
@@ -938,7 +924,7 @@ export default function ChattyDBPage() {
               {enterpriseFeatures.map((feature, i) => (
                   <motion.div
                     key={feature.title}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
@@ -976,7 +962,7 @@ export default function ChattyDBPage() {
               ].map((item, i) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
@@ -1007,7 +993,7 @@ export default function ChattyDBPage() {
               ].map((stat, i) => (
             <motion.div
                   key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}

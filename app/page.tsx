@@ -20,15 +20,49 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chatty AI - Enterprise Intelligence Platform',
     description: 'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
-    url: 'https://chattyai.com',
+    url: 'https://www.chatty-ai.ai',
     siteName: 'Chatty AI',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chatty AI - Enterprise Intelligence Platform',
+    description: 'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
   },
 }
 
 export default function HomePage() {
   return (
     <>
+      {/* SoftwareApplication Schema for Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            name: 'Chatty AI',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web, Cloud, On-Premise',
+            description: 'Enterprise AI platform that connects to all organizational data sources to enable secure, internal AI search and workflow automation.',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+              description: 'Contact for enterprise pricing',
+            },
+            featureList: [
+              'Enterprise knowledge search across all data sources',
+              'Natural language database queries (ChattyDB)',
+              'AI workflow automation with agents',
+              'On-premise deployment option',
+              'SOC 2 Type II certified security',
+              'Integration with 40+ databases and enterprise systems',
+            ],
+          }),
+        }}
+      />
+
       {/* Hero - Interactive Product Demo */}
       <HeroInteractive />
 

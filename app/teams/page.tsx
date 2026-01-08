@@ -59,7 +59,7 @@ function TeamMemberCard({ member, color, index }: { member: typeof teamSections[
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -110,13 +110,13 @@ export default function TeamsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-[var(--bg-primary)] overflow-hidden">
+      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-16 bg-[var(--bg-primary)] overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[700px] h-[500px] bg-gradient-to-b from-[var(--accent-violet)]/20 to-transparent rounded-full blur-[120px]" />
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-violet)]/10 border border-[var(--accent-violet)]/30 text-[var(--accent-violet)] text-xs font-bold tracking-widest uppercase mb-6">
               <Sparkles className="w-4 h-4" />
               Our Team
@@ -129,7 +129,7 @@ export default function TeamsPage() {
             <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
               A diverse team of experts united by a mission to make enterprise AI accessible and secure.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -140,7 +140,7 @@ export default function TeamsPage() {
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header - Centered */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}

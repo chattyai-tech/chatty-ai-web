@@ -415,7 +415,7 @@ export default function AssistantPage() {
             <div className="space-y-8">
               {/* Badge */}
               <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                initial={{ opacity: 1, y: 20, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className="inline-flex"
@@ -437,11 +437,7 @@ export default function AssistantPage() {
               </motion.div>
 
               {/* Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-[-0.04em] leading-[1.05]">
                   <span className="text-[var(--text-primary)]">AI that </span>
                   <span className="relative">
@@ -468,22 +464,17 @@ export default function AssistantPage() {
                   <br />
                   <span className="text-[var(--text-primary)]">knows your data.</span>
                 </h1>
-              </motion.div>
+              </div>
 
               {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl"
-              >
-                Retrieval-Augmented Generation that searches your documents, 
+              <p className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl">
+                Retrieval-Augmented Generation that searches your documents,
                 understands context, and delivers <span className="text-purple-400 font-semibold">cited answers</span> — not hallucinations.
-              </motion.p>
+              </p>
 
               {/* Stats row */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="flex flex-wrap gap-8"
@@ -506,7 +497,7 @@ export default function AssistantPage() {
 
               {/* CTAs */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="flex flex-wrap gap-4 pt-4"
@@ -545,7 +536,7 @@ export default function AssistantPage() {
 
             {/* Right - Interactive Demo */}
             <motion.div
-              initial={{ opacity: 0, x: 50, rotateY: -10 }}
+              initial={{ opacity: 1, x: 50, rotateY: -10 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
               transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
@@ -582,7 +573,7 @@ export default function AssistantPage() {
                     <div className="p-6 space-y-5 min-h-[380px]">
                       {/* User message */}
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 1, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="flex items-start gap-3"
                       >
@@ -602,7 +593,7 @@ export default function AssistantPage() {
                       <AnimatePresence>
                         {!isTyping && !showResponse && (
                           <motion.div
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: 1, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
                             className="flex items-start gap-3"
@@ -638,7 +629,7 @@ export default function AssistantPage() {
                       <AnimatePresence>
                         {showResponse && (
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             className="flex items-start gap-3"
@@ -655,7 +646,7 @@ export default function AssistantPage() {
                               
                               {/* Sources */}
                               <motion.div 
-                                initial={{ opacity: 0, y: 5 }}
+                                initial={{ opacity: 1, y: 5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
                                 className="flex flex-wrap items-center gap-2"
@@ -664,7 +655,7 @@ export default function AssistantPage() {
                                 {demoMessages[1].sources?.map((source, i) => (
                                   <motion.span
                                     key={source}
-                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    initial={{ opacity: 1, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.4 + i * 0.1 }}
                                     className="text-xs px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors cursor-pointer flex items-center gap-1"
@@ -688,7 +679,7 @@ export default function AssistantPage() {
 
         {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
@@ -744,7 +735,7 @@ export default function AssistantPage() {
             {/* Section header */}
             <div className="text-center mb-20">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
@@ -752,7 +743,7 @@ export default function AssistantPage() {
                 How It Works
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)] mb-6"
@@ -760,7 +751,7 @@ export default function AssistantPage() {
                 The RAG Intelligence Pipeline
               </motion.h2>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
@@ -812,7 +803,7 @@ export default function AssistantPage() {
                   <motion.button
                     key={step.id}
                     onClick={() => { setActiveStep(i); setIsPlaying(false) }}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
@@ -861,7 +852,7 @@ export default function AssistantPage() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
-                initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                initial={{ opacity: 1, y: 20, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.98 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -906,7 +897,7 @@ export default function AssistantPage() {
               {/* Left heading */}
               <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
                 <motion.p
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 1, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
@@ -914,7 +905,7 @@ export default function AssistantPage() {
                   Why Choose RAG
                 </motion.p>
                 <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="text-3xl lg:text-4xl font-black tracking-[-0.02em] text-[var(--text-primary)] mb-6"
@@ -922,7 +913,7 @@ export default function AssistantPage() {
                   Not just another AI chatbot.
                 </motion.h2>
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
@@ -939,7 +930,7 @@ export default function AssistantPage() {
                 {features.map((feature, i) => (
                   <motion.div
                     key={feature.title}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
@@ -1001,7 +992,7 @@ export default function AssistantPage() {
             {/* Section header */}
             <div className="text-center mb-20">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
@@ -1009,7 +1000,7 @@ export default function AssistantPage() {
                 Use Cases
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)] mb-6"
@@ -1024,7 +1015,7 @@ export default function AssistantPage() {
                 {useCases.map((useCase, i) => (
                   <motion.button
                     key={useCase.title}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 1, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
@@ -1069,7 +1060,7 @@ export default function AssistantPage() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeUseCase}
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 1, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -30 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -1104,7 +1095,7 @@ export default function AssistantPage() {
                           {useCases[activeUseCase].queries.map((query, i) => (
                             <motion.div
                               key={query}
-                              initial={{ opacity: 0, x: -10 }}
+                              initial={{ opacity: 1, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: i * 0.1 }}
                               whileHover={{ x: 5, backgroundColor: 'rgba(139, 92, 246, 0.05)' }}
@@ -1144,7 +1135,7 @@ export default function AssistantPage() {
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-xs font-bold tracking-[0.3em] uppercase text-purple-400 mb-4"
@@ -1152,7 +1143,7 @@ export default function AssistantPage() {
                 Product Demo
               </motion.p>
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl lg:text-5xl font-black tracking-[-0.03em] text-[var(--text-primary)] mb-4"
@@ -1160,7 +1151,7 @@ export default function AssistantPage() {
                 See it in action
               </motion.h2>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
@@ -1171,7 +1162,7 @@ export default function AssistantPage() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              initial={{ opacity: 1, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -1210,7 +1201,7 @@ export default function AssistantPage() {
 
           <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="relative"
@@ -1261,7 +1252,7 @@ export default function AssistantPage() {
 
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
