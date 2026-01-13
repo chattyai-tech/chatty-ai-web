@@ -199,7 +199,7 @@ export const LOGOS = [
     name: 'Office of the President',
     image: '/d56fc5aad14690d3e1599ff3da4e67af.png',
   },
-  { name: 'Hillel Yaffe', image: '/logo_eng.jpg' },
+  { name: 'Hillel Yaffe', image: '/logo_eng.png' },
   { name: 'Electra Power', image: '/1645532977595-0.png' },
   { name: 'Howden', image: '/Howden_Consumer_Logo_Brass_RGB2.png' },
 ];
