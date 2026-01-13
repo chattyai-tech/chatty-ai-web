@@ -1,25 +1,27 @@
-import type { Metadata } from 'next'
-import { HeroInteractive } from '@/components/interactive-hero/HeroInteractive'
-import { FeaturesBento } from '@/components/FeaturesBento'
-import { SecuritySection } from '@/components/SecuritySection'
-import { SystemVideoSection } from '@/components/SystemVideoSection'
-import { LogoMarquee } from '@/components/LogoMarquee'
-import { CTASection } from '@/components/CTASection'
-import { ProductOverview } from '@/components/ProductOverview'
-import { UnifiedPlatform } from '@/components/UnifiedPlatform'
-import { IntegrationsOrbit } from '@/components/IntegrationsOrbit'
-import { Testimonials } from '@/components/Testimonials'
-import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import type { Metadata } from 'next';
+import { HeroInteractive } from '@/components/interactive-hero/HeroInteractive';
+import { FeaturesBento } from '@/components/FeaturesBento';
+import { SecuritySection } from '@/components/SecuritySection';
+import { SystemVideoSection } from '@/components/SystemVideoSection';
+import { LogoMarquee } from '@/components/LogoMarquee';
+import { CTASection } from '@/components/CTASection';
+import { ProductOverview } from '@/components/ProductOverview';
+import { UnifiedPlatform } from '@/components/UnifiedPlatform';
+import { IntegrationsOrbit } from '@/components/IntegrationsOrbit';
+import { Testimonials } from '@/components/Testimonials';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Chatty AI - One clear answer to all your company knowledge',
-  description: 'An enterprise-grade AI platform that connects to all organizational data sources (files, systems, databases) to enable secure, internal AI search and workflow automation.',
+  description:
+    'An enterprise-grade AI platform that connects to all organizational data sources (files, systems, databases) to enable secure, internal AI search and workflow automation.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Chatty AI - Enterprise Intelligence Platform',
-    description: 'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
+    description:
+      'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
     url: 'https://www.chatty-ai.ai',
     siteName: 'Chatty AI',
     type: 'website',
@@ -27,9 +29,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chatty AI - Enterprise Intelligence Platform',
-    description: 'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
+    description:
+      'One clear answer to all your company knowledge. Enterprise-grade AI platform with secure, on-premise deployment.',
   },
-}
+};
 
 export default function HomePage() {
   return (
@@ -44,7 +47,8 @@ export default function HomePage() {
             name: 'Chatty AI',
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web, Cloud, On-Premise',
-            description: 'Enterprise AI platform that connects to all organizational data sources to enable secure, internal AI search and workflow automation.',
+            description:
+              'Enterprise AI platform that connects to all organizational data sources to enable secure, internal AI search and workflow automation.',
             offers: {
               '@type': 'Offer',
               price: '0',
@@ -110,11 +114,10 @@ export default function HomePage() {
           <LogoMarquee />
         </section>
       </ScrollReveal>
+      <Testimonials />
 
       {/* Final CTA */}
       <CTASection />
-
-      <Testimonials />
     </>
-  )
+  );
 }

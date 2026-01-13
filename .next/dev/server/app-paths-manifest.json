@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/platform/page": "app/platform/page.js",
+  "/products/chattydb/page": "app/products/chattydb/page.js",
+  "/products/embedded/page": "app/products/embedded/page.js"
+}

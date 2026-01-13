@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import React from 'react'
+import React from 'react';
 
 export const SystemVideoSection: React.FC = () => {
   return (
@@ -11,7 +11,8 @@ export const SystemVideoSection: React.FC = () => {
             System Overview
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Watch how ChattyAI runs inside your environment and connects to your systems.
+            Watch how ChattyAI runs inside your environment and connects to your
+            systems.
           </p>
         </div>
 
@@ -30,5 +31,5 @@ export const SystemVideoSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

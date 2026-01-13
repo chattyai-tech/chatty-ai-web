@@ -525,12 +525,18 @@ export default function ChattyDBPage() {
             {/* Status */}
             {isAutoPlaying && !hasUserInteracted && (
               <motion.div
-                initial={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="flex items-center justify-center gap-2 text-sm text-[var(--text-muted)]"
               >
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span>Live demo, click to interact</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span>Live demo</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span>Click to interact</span>
+                </div>
               </motion.div>
             )}
           </div>
